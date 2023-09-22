@@ -28,14 +28,19 @@ export const App = () => {
       <Form />
       <h2>Contacts</h2>
       <Filter />
+      {error && (
+        <div>
+          We're sorry, an error has occurred. Please reload this page and try
+          again
+        </div>
+      )}
       {isLoading && !error && <Loader />}
       {!isLoading && totalContacts && (
         <SubTitle>
           {totalContacts.length} contacts are in the Phonebook
         </SubTitle>
       )}
-      <ContactList />
-
+      {!isLoading && !error && <ContactList />}
       <ToastContainer />
       <GlobalStyle />
     </Container>
