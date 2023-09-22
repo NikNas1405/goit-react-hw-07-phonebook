@@ -1,6 +1,8 @@
-import contacts from '../components/data.json';
-
 export const initialState = {
-  contacts,
-  filters: '',
+  contacts: {
+    items: [],
+    isLoading: false,
+    error: null,
+  },
+  filter: '',
 };

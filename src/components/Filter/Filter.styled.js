@@ -12,9 +12,6 @@ export const TextFilter = styled.p`
 `;
 
 export const InputFilter = styled.input`
-  /* border-radius: 5px;
-  padding: 4px 8px; */
-
   display: block;
   padding: 10px;
   width: 100%;

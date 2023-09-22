@@ -10,7 +10,7 @@ import {
 } from './Form.styled';
 
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/contactsSlice';
+import { addContact } from 'utills/getAPI';
 
 // Synchronous validation function
 const validateName = value => {
@@ -61,7 +61,6 @@ export const Form = () => {
             placeholder="Taras Shevchenko"
           ></StyledField>
           {errors.name && touched.name ? <div>{errors.name}</div> : null}
-          {/* <ErrorMessage name="name" /> */}
           <Label htmlFor="number">Number</Label>
           <StyledField
             validate={validateNumber}
@@ -70,7 +69,6 @@ export const Form = () => {
             placeholder="0501234567"
           ></StyledField>
           {errors.number && touched.number ? <div>{errors.number}</div> : null}
-          {/* <ErrorMessage name="number" /> */}
           <StyledFormButton type="submit">Add contact</StyledFormButton>
         </StyledForm>
       )}

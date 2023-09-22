@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/contactsSlice';
+import { CiTrash } from 'react-icons/ci';
+import { deleteContact } from 'utills/getAPI';
 
 import { selectVisibleContacts } from 'redux/selectors';
 
@@ -8,6 +9,7 @@ import {
   ContactListItem,
   ContactListItemText,
   ContactListItemButton,
+  Wrapper,
 } from './ContactList.styled.js';
 
 export const ContactList = () => {
@@ -16,17 +18,19 @@ export const ContactList = () => {
   const visibleContacts = useSelector(selectVisibleContacts);
 
   return (
-    <ContactListStyled>
-      {visibleContacts.map(({ id, name, number }) => (
-        <ContactListItem key={id}>
-          <ContactListItemText>
-            {name}: {number}
-          </ContactListItemText>
-          <ContactListItemButton onClick={() => dispatch(deleteContact(id))}>
-            Delete
-          </ContactListItemButton>
-        </ContactListItem>
-      ))}
-    </ContactListStyled>
+    <Wrapper>
+      <ContactListStyled>
+        {visibleContacts.map(({ id, name, phone }) => (
+          <ContactListItem key={id}>
+            <ContactListItemText>
+              {name}: {phone}
+            </ContactListItemText>
+            <ContactListItemButton onClick={() => dispatch(deleteContact(id))}>
+              <CiTrash />
+            </ContactListItemButton>
+          </ContactListItem>
+        ))}
+      </ContactListStyled>
+    </Wrapper>
   );
 };

@@ -1,23 +1,27 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  margin: 20px auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 200px;
+`;
+
 export const ContactListStyled = styled.ul`
-  /* display: flex;
-  flex-direction: column;
-  gap: 4px; */
   margin-top: 20px;
-  /* align-items: center; */
   color: #fff;
   font-weight: 500;
   font-size: 18px;
+  padding: 4px;
 `;
 
 export const ContactListItem = styled.li`
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px 0px #008080;
   border-radius: 4px;
-  background-color: #cdf7d6;
+  background-color: #f5fcf6;
   color: #008080;
   &:not(:last-child) {
     margin-bottom: 5px;
@@ -27,23 +31,14 @@ export const ContactListItem = styled.li`
 export const ContactListItemText = styled.span`
   color: #008080;
   text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
+  line-height: 1;
+  display: block;
   text-align: left;
   width: 100%;
   margin: 0;
 `;
 
 export const ContactListItemButton = styled.button`
-  /* text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 500;
-  width: 100px;
-  cursor: pointer;
-  color: #008080;
-  background-color: #cdf7d6;
-  border: none; */
-
   margin-left: 30px;
   padding: 0;
   cursor: pointer;
@@ -53,8 +48,6 @@ export const ContactListItemButton = styled.button`
   transition: transform 250ms ease;
 
   &:is(:focus, :hover) {
-    /* color: #1c1694;
-    background-color: #5cff7c; */
     transform: scale(1.1);
   }
 `;

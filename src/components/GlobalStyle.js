@@ -15,9 +15,7 @@ body {
   color: #008080;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-image: url('../images/bcg.jpg');
-
-  background:  #dee2ff url(https://img.freepik.com/free-vector/leaves-background-with-metallic-foil_79603-956.jpg) 0 0 / cover no-repeat;
+  background:  #f5fcf6 url(https://img.freepik.com/free-vector/leaves-background-with-metallic-foil_79603-956.jpg) 0 0 / cover no-repeat;
   
 }
 
@@ -37,14 +35,14 @@ h2 {
   font-weight: 900;
   font-size: 36px;
   color: #008080;
-  margin: 12px 4px;
+  margin: 0;
 }
 `;
 
 export const Container = styled.div`
   max-width: 600px;
   max-height: 700px;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -53,3 +51,8 @@ export const Container = styled.div`
   background-color: #fff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 `;
+
+export const SubTitle = styled.h3`
+  color: #008080;
+`;
+
