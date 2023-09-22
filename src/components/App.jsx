@@ -28,15 +28,14 @@ export const App = () => {
       <Form />
       <h2>Contacts</h2>
       <Filter />
-      {totalContacts.length ? (
+      {isLoading && !error && <Loader />}
+      {!isLoading && totalContacts && (
         <SubTitle>
           {totalContacts.length} contacts are in the Phonebook
         </SubTitle>
-      ) : (
-        <SubTitle>There aren't any contacts</SubTitle>
       )}
       <ContactList />
-      {isLoading && !error && <Loader />}
+
       <ToastContainer />
       <GlobalStyle />
     </Container>
