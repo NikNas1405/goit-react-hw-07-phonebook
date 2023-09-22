@@ -28,8 +28,12 @@ export const App = () => {
       <Form />
       <h2>Contacts</h2>
       <Filter />
-      {totalContacts && (
-        <SubTitle>{totalContacts.length} contacts in the Phonebook </SubTitle>
+      {totalContacts.length ? (
+        <SubTitle>
+          {totalContacts.length} contacts are in the Phonebook
+        </SubTitle>
+      ) : (
+        <SubTitle>There aren't any contacts</SubTitle>
       )}
       <ContactList />
       {isLoading && !error && <Loader />}

@@ -31,6 +31,7 @@ export const ContactListItem = styled.li`
 export const ContactListItemText = styled.span`
   color: #008080;
   text-transform: uppercase;
+  height: 20px;
   line-height: 1;
   display: block;
   text-align: left;
