@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://650b3186dfd73d1fab09c0ad.mockapi.io';
@@ -21,9 +22,22 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContact = createAsyncThunk(
   'contacts/addContact',
-  async ( {name, phone}, thunkAPI) => {
+  async ( newContact, thunkAPI) => {
     try {
-      const response = await axios.post('/contacts', { name, phone });
+      const checkingResponse= await axios.get('/contacts', { name: newContact.name, phone : newContact.phone});
+
+const checkName = checkingResponse.data.find(contact => contact.name === newContact.name);
+      const checkNumber = checkingResponse.data.find(contact => contact.phone === newContact.phone);
+if (checkName) {
+  toast.error(`${newContact.name} is already in contacts.`);
+  return thunkAPI.rejectWithValue();
+}
+      if (checkNumber) {
+          toast.error(`${newContact.phone} is already in contacts.`);
+          return thunkAPI.rejectWithValue();
+        }
+
+      const response = await axios.post('/contacts', newContact);
       return response.data;
     } catch (error) {
       console.log(error);
