@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContactFilterDiv = styled.div`
   text-align: center;
+  position: relative;
 `;
 
 export const TextFilter = styled.p`
@@ -29,4 +30,16 @@ export const InputFilter = styled.input`
     outline: none;
     color: #008080;
   }
+`;
+
+export const ButtonFilter = styled.button`
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  margin-left: 30px;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
 `;
