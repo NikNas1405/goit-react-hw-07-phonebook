@@ -1,6 +1,9 @@
 import React from 'react';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+
+import { addContact } from 'operations/getAPI';
 
 import {
   StyledFormButton,
@@ -9,8 +12,6 @@ import {
   Label,
 } from './Form.styled';
 
-import { useDispatch } from 'react-redux';
-import { addContact } from 'utills/getAPI';
 
 // Synchronous validation function
 const validateName = value => {
@@ -24,7 +25,7 @@ const validateName = value => {
   return errorMessage;
 };
 
-const validateNumber = value => {
+const validatePhone = value => {
   let errorMessage;
   if (
     !/\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/i.test(
@@ -44,7 +45,7 @@ export const Form = () => {
     <Formik
       initialValues={{
         name: '',
-        number: '',
+        phone: '',
       }}
       onSubmit={(values, actions) => {
         dispatch(addContact({ ...values, id: nanoid() }));
@@ -61,14 +62,14 @@ export const Form = () => {
             placeholder="Taras Shevchenko"
           ></StyledField>
           {errors.name && touched.name ? <div>{errors.name}</div> : null}
-          <Label htmlFor="number">Number</Label>
+          <Label htmlFor="phone">Phone</Label>
           <StyledField
-            validate={validateNumber}
+            validate={validatePhone}
             type="tel"
-            name="number"
+            name="phone"
             placeholder="0501234567"
           ></StyledField>
-          {errors.number && touched.number ? <div>{errors.number}</div> : null}
+          {errors.phone && touched.phone ? <div>{errors.phone}</div> : null}
           <StyledFormButton type="submit">Add contact</StyledFormButton>
         </StyledForm>
       )}

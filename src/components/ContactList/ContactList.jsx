@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { CiTrash } from 'react-icons/ci';
-import { deleteContact } from 'utills/getAPI';
 
+import { deleteContact } from 'operations/getAPI.js';
 import { selectVisibleContacts } from 'redux/selectors';
 
 import {

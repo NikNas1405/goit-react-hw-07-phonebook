@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
+
 import { initialState } from '../initialState';
-import { fetchContacts, addContact, deleteContact } from 'utills/getAPI';
+import { fetchContacts, addContact, deleteContact } from 'operations/getAPI';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -20,6 +22,22 @@ const handleFetchContactsFulfilled = (state, action) => {
 const handleAddContactFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
+
+  const checkName = state.items.find(
+    contact => contact.name === action.payload.name
+  );
+  const checkNumber = state.items.find(
+    contact => contact.phone === action.payload.phone
+  );
+  if (checkName) {
+    toast.error(`${action.payload.name} is already in contacts.`);
+    return state;
+  }
+  if (checkNumber) {
+    toast.error(`${action.payload.phone} is already in contacts.`);
+    return state;
+  }
+
   state.items.push(action.payload);
 };
 const handleDeleteContactFulfilled = (state, action) => {

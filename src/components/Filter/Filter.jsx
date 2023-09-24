@@ -1,5 +1,6 @@
-import { TextFilter, InputFilter, ContactFilterDiv } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { TextFilter, InputFilter, ContactFilterDiv } from './Filter.styled';
 import { selectFilter } from 'redux/selectors';
 import { setFilters } from '../../redux/filters/filtersSlice';
 

@@ -2,13 +2,15 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
 import { selectContacts, selectIsLoading, selectError } from 'redux/selectors';
 import { ContactList } from './ContactList/ContactList';
 import { Form } from './Form/Form';
 import { Filter } from './Filter/Filter';
-import { fetchContacts } from 'utills/getAPI';
-import { GlobalStyle, Container, SubTitle } from './GlobalStyle';
+import { fetchContacts } from 'operations/getAPI';
 import Loader from './Loader/Loader';
+
+import { GlobalStyle, Container, SubTitle } from './GlobalStyle';
 
 export const App = () => {
   const totalContacts = useSelector(selectContacts);
