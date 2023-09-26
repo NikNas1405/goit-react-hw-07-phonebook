@@ -39,7 +39,7 @@ export const ContactListItemText = styled.span`
   margin: 0;
 `;
 
-export const ContactListItemButton = styled.button`
+export const ContactListItemDeleteButton = styled.button`
   margin-left: 30px;
   padding: 0;
   cursor: pointer;

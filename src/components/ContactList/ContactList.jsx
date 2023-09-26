@@ -8,7 +8,7 @@ import {
   ContactListStyled,
   ContactListItem,
   ContactListItemText,
-  ContactListItemButton,
+  ContactListItemDeleteButton,
   Wrapper,
 } from './ContactList.styled.js';
 
@@ -25,9 +25,12 @@ export const ContactList = () => {
             <ContactListItemText>
               {name}: {phone}
             </ContactListItemText>
-            <ContactListItemButton onClick={() => dispatch(deleteContact(id))}>
+
+            <ContactListItemDeleteButton
+              onClick={() => dispatch(deleteContact(id))}
+            >
               <CiTrash />
-            </ContactListItemButton>
+            </ContactListItemDeleteButton>
           </ContactListItem>
         ))}
       </ContactListStyled>
