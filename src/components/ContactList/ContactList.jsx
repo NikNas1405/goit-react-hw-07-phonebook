@@ -15,12 +15,14 @@ import {
 export const ContactList = () => {
   const dispatch = useDispatch();
 
-  const visibleContacts = useSelector(selectVisibleContacts);
+  const sortedVisibleContacts = useSelector(selectVisibleContacts).sort(
+    (a, b) => (a.name > b.name ? 1 : -1)
+  );
 
   return (
     <Wrapper>
       <ContactListStyled>
-        {visibleContacts.map(({ id, name, phone }) => (
+        {sortedVisibleContacts.map(({ id, name, phone }) => (
           <ContactListItem key={id}>
             <ContactListItemText>
               {name}: {phone}
