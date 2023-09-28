@@ -15,8 +15,7 @@ body {
   color: #008080;
   padding-top: 30px;
   padding-bottom: 30px;
-  background:  #f5fcf6 url(https://img.freepik.com/free-vector/leaves-background-with-metallic-foil_79603-956.jpg) 0 0 / cover no-repeat;
-  
+  background:  #f5fcf6 url(https://img.freepik.com/free-psd/marble-product-backdrop-mockup-psd-with-shadow_53876-141760.jpg?w=996&t=st=1695835489~exp=1695836089~hmac=cd2c18857be6d45ee7bc439c4637cf7873ab2f7fd895fa76c6429f5415dca2fd) 0 0 / cover no-repeat;
 }
 
 code {
@@ -41,7 +40,7 @@ h2 {
 
 export const Container = styled.div`
   max-width: 600px;
-  max-height: 700px;
+  max-height: 660px;
   overflow: hidden;
   position: relative;
   margin-left: auto;
@@ -55,4 +54,3 @@ export const Container = styled.div`
 export const SubTitle = styled.h3`
   color: #008080;
 `;
-
