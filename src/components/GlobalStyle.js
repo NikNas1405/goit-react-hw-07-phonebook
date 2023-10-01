@@ -40,7 +40,7 @@ h2 {
 
 export const Container = styled.div`
   max-width: 600px;
-  max-height: 660px;
+  max-height: 700px;
   overflow: hidden;
   position: relative;
   margin-left: auto;
